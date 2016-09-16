@@ -3,6 +3,15 @@ const Paddle = require('../lib/paddle');
 
 describe('Paddle', function () {
 
+  var options ={
+    x: undefined,
+    paddleX:undefined,
+canvas: undefined,
+paddleHeight: undefined,
+paddleWidth: undefined,
+paddleColor: undefined
+  };
+
   it('should be a function', function () {
     assert.isFunction(Paddle);
   });
@@ -13,12 +22,15 @@ describe('Paddle', function () {
   });
 
   it('should take the first argument and set it as the "x" property of the instantiated paddle object', function () {
-    var paddle = new Paddle(15);
-    assert.equal(paddle.x, 15);
+    options.x = 15;
+    var paddle = new Paddle(options);
+    assert.equal(paddle.options.x, 15);
   });
 
   it('should take the first argument and set it as the "y" property of the instantiated paddle object', function () {
-    var paddle = new Paddle(15, 30);
+    options.x = 15;
+    options.y = 30;
+    var paddle = new Paddle(options);
     assert.equal(paddle.y, 30);
   });
 
