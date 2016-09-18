@@ -42,7 +42,7 @@ describe('paddle', function () {
   it('"moveLeft()" should decrement the "x" property by 1', function() {
     var paddle = new Paddle(500, 300);
     paddle.moveLeft();
-    assert.equal(paddle.x, 185);
+    assert.equal(paddle.x, 193);
   });
 
   it('should have a method called "moveRight()"', function () {
@@ -53,6 +53,6 @@ describe('paddle', function () {
   it('"moveRight()" should increment the "x" property by 1', function () {
     var paddle = new Paddle(500, 300);
     paddle.moveRight();
-    assert.equal(paddle.x, 215);
+    assert.equal(paddle.x, 207);
   });
 });
