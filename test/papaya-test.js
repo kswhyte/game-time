@@ -12,9 +12,14 @@ describe('Papaya', function () {
     assert.isObject(papaya);
   });
 
-  it('should have a default "radius"', function() {
+  it('should have a default "width"', function() {
     var papaya = new Papaya(500, 300);
-    assert.equal(papaya.papayaRadius, 10);
+    assert.equal(papaya.width, 10);
+  });
+
+  it('should have a default "height"', function() {
+    var papaya = new Papaya(500, 300);
+    assert.equal(papaya.width, 10);
   });
 
   it('should have a default "speedX" property that indicates its horizontal direction of movement', function() {
