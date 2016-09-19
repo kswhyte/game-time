@@ -11,14 +11,14 @@ describe('Jungle', function () {
     assert.isObject(jungle);
   });
 
-  it('should have a width that is equal to the canvas width', function () {
-    var jungle = new Jungle(600, 400);
-    assert.equal(jungle.height, 400);
-  });
-
   it('should have a width that is equal to the canvas height', function () {
     var jungle = new Jungle(600, 400);
     assert.equal(jungle.width, 600);
+  });
+
+  it('should have a height that is equal to the canvas width', function () {
+    var jungle = new Jungle(600, 400);
+    assert.equal(jungle.height, 400);
   });
 
   it('should be able to instantiate a new paddle when a jungle is created', function() {
@@ -31,7 +31,7 @@ describe('Jungle', function () {
     assert.isObject(jungle.papaya);
   });
 
-  it('should have a detectJungleBoundaries function', function() {
+  it('should have a "launchPapayaWithCollisionDetection" function', function() {
     var jungle = new Jungle(40, 40);
     assert.isFunction(jungle.detectJungleBoundaries);
   });
