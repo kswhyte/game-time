@@ -1,18 +1,33 @@
-.container {
-  background: url("images/papaya-leaves.jpg");
-  background-size: contain;
+body {
+  background: url("../images/papaya-leaves.jpg");
+  background-size: cover;
   /*align-items: center;*/
 }
 
+h1, h2 {
+  margin: 0;
+}
+
 h1 {
-  font: 60px 'Bungee Inline', cursive;
+  font-size: 60px;
+  font-family: 'Bungee Inline', cursive;
+  font-weight: 400;
   /*margin: 30px auto;*/
 }
 
-.heading-box{
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  /*margin: 30px auto;*/
+}
+
+.heading-box {
+  padding: 30px;
   width: 850px;
-  display: flex;
-  justify-content: center ;
+  /*display: relat;*/
+  text-align: center;
+  /*justify-content: center ;*/
   background: blanchedalmond;
   margin: 60px auto;
   outline: 6px dashed blanchedalmond;
@@ -29,7 +44,6 @@ h1 {
   outline: 12px solid grey;
   /*border: #0095DD;*/
 }
-
 
 @keyframes animateBorder {
   to {
