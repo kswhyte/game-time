@@ -1,4 +1,28 @@
+.container {
+  background: url('game-time/images/papaya-leaves.jpg' ) no-repeat center center;
+  background-size: cover;
+}
+
+h1{
+  font-family: 'Bungee Inline', cursive;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+
+}
+
 #jungle-canvas {
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  margin: 100px auto;
   background: papayawhip;
   /*border: #0095DD;*/
 }
+
+/*font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Bungee Shade', cursive;
+font-family: 'Oswald', sans-serif;
+font-family: 'Bungee Inline', cursive;*/
