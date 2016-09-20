@@ -1,23 +1,42 @@
 .container {
-  background: url('game-time/images/papaya-leaves.jpg' ) no-repeat center center;
-  background-size: cover;
+  background: url("images/papaya-leaves.jpg");
+  background-size: contain;
+  /*align-items: center;*/
 }
 
-h1{
-  font-family: 'Bungee Inline', cursive;
-  margin: 30px auto;
-  display: flex;
-  align-items: center;
+h1 {
+  font: 60px 'Bungee Inline', cursive;
+  /*margin: 30px auto;*/
+}
 
+.heading-box{
+  width: 850px;
+  display: flex;
+  justify-content: center ;
+  background: blanchedalmond;
+  margin: 60px auto;
+  outline: 6px dashed blanchedalmond;
+  box-shadow: 0 0 0 6px #EA3556;
+  animation: 1s animateBorder infinite;
 }
 
 #jungle-canvas {
   display: flex;
   -ms-align-items: center;
   align-items: center;
-  margin: 100px auto;
+  margin: auto;
   background: papayawhip;
+  outline: 12px solid grey;
   /*border: #0095DD;*/
+}
+
+
+@keyframes animateBorder {
+  to {
+    outline-color: #EA3556;
+    box-shadow: 0 0 0 6px greenyellow;
+  }
+
 }
 
 /*font-family: 'Open Sans', sans-serif;
