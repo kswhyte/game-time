@@ -16,7 +16,6 @@ h1 {
 h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
-  letter-spacing: 1px;
 }
 
 .heading-box {
@@ -30,6 +29,15 @@ h2 {
   animation: 1s animateBorder infinite;
 }
 
+/*#gameplay-container {
+  display: flex;
+  align-items: center;
+  -ms-align-items: center;
+  margin: 60px auto 90px auto;
+  background: papayawhip;
+  outline: 12px solid greenyellow;
+}*/
+
 #jungle-canvas {
   display: flex;
   align-items: center;
@@ -39,12 +47,16 @@ h2 {
   outline: 12px solid greenyellow;
 }
 
+/*#game-console {
+  width: 200px;
+  height: 500px;
+}*/
+
 @keyframes animateBorder {
   to {
     outline-color: #EA3556;
     box-shadow: 0 0 0 12px greenyellow;
   }
-
 }
 
 /*font-family: 'Open Sans', sans-serif;
