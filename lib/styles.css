@@ -1,7 +1,6 @@
 body {
   background: url("../images/papaya-leaves.jpg");
   background-size: cover;
-  /*align-items: center;*/
 }
 
 h1, h2 {
@@ -9,46 +8,41 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 60px;
   font-family: 'Bungee Inline', cursive;
+  font-size: 60px;
   font-weight: 400;
-  /*margin: 30px auto;*/
 }
 
 h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
   letter-spacing: 1px;
-  /*margin: 30px auto;*/
 }
 
 .heading-box {
-  padding: 30px;
   width: 850px;
-  /*display: relat;*/
+  margin: 72px auto 30px auto;
+  padding: 30px;
   text-align: center;
-  /*justify-content: center ;*/
   background: blanchedalmond;
-  margin: 60px auto;
-  outline: 6px dashed blanchedalmond;
+  outline: 12px dashed blanchedalmond;
   box-shadow: 0 0 0 6px #EA3556;
   animation: 1s animateBorder infinite;
 }
 
 #jungle-canvas {
   display: flex;
-  -ms-align-items: center;
   align-items: center;
-  margin: auto;
+  -ms-align-items: center;
+  margin: 60px auto 90px auto;
   background: papayawhip;
   outline: 12px solid greenyellow;
-  /*border: #0095DD;*/
 }
 
 @keyframes animateBorder {
   to {
     outline-color: #EA3556;
-    box-shadow: 0 0 0 6px greenyellow;
+    box-shadow: 0 0 0 12px greenyellow;
   }
 
 }
