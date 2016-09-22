@@ -23,20 +23,75 @@ describe('Jungle', function () {
     assert.equal(jungle.height, 400);
   });
 
-  it('should have a level property', function(){
+  it('should have a blockSetup property', function(){
     var jungle = new Jungle(600,400);
-    assert.equal(jungle.level, false)
+    assert.equal(jungle.blockSetup, false)
   });
 
-  it('should have a default papayas property of 3', function() {
+  it('should have a default sparePapayas property of 3', function() {
     var jungle = new Jungle(600, 400);
-    assert.equal(jungle.papayas, 3)
+    assert.equal(jungle.sparePapayas, 3)
   });
+});
 
+describe('Jungle and Paddle', function () {
   it('should be able to instantiate a new paddle when a jungle is created', function() {
     var jungle = new Jungle(500, 300);
     assert.isObject(jungle.paddle);
   });
+
+  it('should have a detectPaddle prototype method', function(){
+    var jungle = new Jungle(40, 40);
+    assert.isFunction(jungle.detectPaddle);
+  });
+
+  it('if the papaya is colliding into the top of the paddle, the papaya.speedY should be -4', function(){
+    var jungle = new Jungle(500, 700);
+    var papaya = new Papaya(10, 10);
+    var paddle = new Paddle(100, 10);
+    papaya.y = 491;
+    assert.equal(papaya.speedY, -4);
+  });
+
+  it('if the papaya is colliding into the right quarter of the paddle the papaya.speedX should be 3.6', function(){
+    var jungle = new Jungle(500, 700);
+    var papaya = new Papaya(10, 10);
+    var paddle = new Paddle(100, 10);
+    papaya.x = 176;
+    papaya.y = 491;
+    paddle.x = 100;
+    paddle.y = 490;
+    papaya.rightWhippage();
+    assert.equal(papaya.speedX, 3.6)
+  });
+
+  it('if the papaya is colliding into the left quarter of the paddle the papaya.speedX should be 3.6', function(){
+    var jungle = new Jungle(500, 700);
+    var papaya = new Papaya(10, 10);
+    var paddle = new Paddle(100, 10);
+    papaya.x = 102;
+    papaya.y = 491;
+    paddle.x = 100;
+    paddle.y = 490;
+    papaya.leftWhippage();
+    assert.equal(papaya.speedX, 3.6)
+  });
+
+  it('if the papaya is colliding into the center of the paddle the papaya.speedX should be 4.4', function(){
+    var jungle = new Jungle(500, 700);
+    var papaya = new Papaya(10, 10);
+    var paddle = new Paddle(100, 10);
+    papaya.x = 130;
+    papaya.y = 491;
+    paddle.x = 100;
+    paddle.y = 490;
+    papaya.centerWhippage();
+    assert.equal(papaya.speedX, 4.4)
+  });
+
+});
+
+describe('Jungle and Papaya', function () {
 
   it('should be able to instantiate a new papaya when a jungle is created', function() {
     var jungle = new Jungle(500, 300);
@@ -48,39 +103,18 @@ describe('Jungle', function () {
     assert.isFunction(jungle.launchPapaya);
   });
 
-  it('should have a prototype method called formRow', function() {
+});
+
+describe('Jungle and Blocks', function () {
+
+  it('should have a prototype method called formRows', function() {
     var jungle = new Jungle(40, 40);
-    assert.isFunction(jungle.formRow);
+    assert.isFunction(jungle.formRows);
   });
 
-  it('should have a prototype method called formBlockRow1', function() {
+  it('should have a prototype method called generateRowsBasedOnLevel', function() {
     var jungle = new Jungle(40,40);
-    assert.isFunction(jungle.formBlockRow1);
-  });
-
-  it('should have a prototype method called formBlockRow2', function() {
-    var jungle = new Jungle(40, 40);
-    assert.isFunction(jungle.formBlockRow2);
-  });
-
-  it('should have a prototype method called formBlockRow3', function() {
-    var jungle = new Jungle(40, 40);
-    assert.isFunction(jungle.formBlockRow3)
-  });
-
-  it('should have a detectJungleBoundaries prototype method', function(){
-    var jungle = new Jungle(40, 40);
-    assert.isFunction(jungle.detectJungleBoundaries);
-  });
-
-  it('should have a detectPaddle prototype method', function(){
-    var jungle = new Jungle(40, 40);
-    assert.isFunction(jungle.detectPaddle);
-  });
-
-  it('should have a gameOver prototype method', function(){
-    var jungle = new Jungle(40, 40);
-    assert.isFunction(jungle.gameOver);
+    assert.isFunction(jungle.generateRowsBasedOnLevel);
   });
 
   it('should have a detectBlocks prototype method', function(){
@@ -93,18 +127,10 @@ describe('Jungle', function () {
     assert.isFunction(jungle.alterBlockStatus);
   });
 
-  it('should have a renderLevel prototype method', function(){
+  it('should have an updateBlockSetup prototype method', function(){
     var jungle = new Jungle(40, 40);
-    assert.isFunction(jungle.renderLevel);
+    assert.isFunction(jungle.updateBlockSetup);
   });
-
-  it('if the papaya is colliding into the top of the paddle, the papaya.speedY should be -4', function(){
-    var jungle = new Jungle(500, 700);
-    var papaya = new Papaya(10, 10);
-    var paddle = new Paddle(100, 10);
-    papaya.y = 491;
-    assert.equal(papaya.speedY, -4);
-  })
 
   it('if the papaya is colliding into the right of a block, the papaya.speedX should be +4', function(){
     var jungle = new Jungle(500, 700);
@@ -150,6 +176,19 @@ describe('Jungle', function () {
     jungle.alterBlockStatus(block);
     assert.equal(block.status, false)
   });
+});
+
+describe('Jungle game state and boundaries', function () {
+
+  it('should have a detectJungleBoundaries prototype method', function(){
+    var jungle = new Jungle(40, 40);
+    assert.isFunction(jungle.detectJungleBoundaries);
+  });
+
+  it('should have a gameOver prototype method', function(){
+    var jungle = new Jungle(40, 40);
+    assert.isFunction(jungle.gameOver);
+  });
 
   it('if the papaya hits the left wall of the jungle, the speedX should be -4', function(){
     var jungle = new Jungle(500, 700);
@@ -165,7 +204,9 @@ describe('Jungle', function () {
     papaya.x = 687;
     papaya.speedX = 4;
     assert.equal(papaya.speedX, 4);
-  })
+  });
+
+});
 
 
 
@@ -174,4 +215,3 @@ describe('Jungle', function () {
   //   var jungle = new Jungle()
   //   assert.isFunction()
   // })
-});

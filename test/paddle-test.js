@@ -30,9 +30,6 @@ describe('Paddle', function () {
     var paddle = new Paddle(500, 300);
     assert.equal(paddle.height, 10);
   });
-});
-
-describe('paddle', function () {
 
   it('should have a method called "moveLeft()"', function() {
     var paddle = new Paddle(500, 300);
