@@ -26,5 +26,4 @@ describe('Block', function () {
     var block = new Block();
     assert.equal(block.status, true);
   });
-
 });

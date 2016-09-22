@@ -19,9 +19,9 @@ h2 {
 
 .heading-box {
   width: 850px;
+  text-align: center;
   margin: 60px auto 30px auto;
   padding: 30px;
-  text-align: center;
   background: blanchedalmond;
   outline: 12px dashed blanchedalmond;
   box-shadow: 0 0 0 6px #EA3556;
@@ -36,8 +36,8 @@ h2 {
 }
 
 .papaya-counter {
-  margin: auto;
   position: relative;
+  margin: auto;
   text-align: center;
 }
 

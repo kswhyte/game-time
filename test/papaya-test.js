@@ -44,27 +44,26 @@ describe('Papaya', function () {
 
   it('should have a prototype method called isCollidingIntoTopOf', function() {
     var papaya = new Papaya(500, 300);
-    assert.isFunction(papaya.isCollidingIntoTopOf)
+    assert.isFunction(papaya.isCollidingIntoTopOf);
   });
 
   it('should have a prototype method called isCollidingIntoRightOf', function() {
     var papaya = new Papaya(500, 300);
-    assert.isFunction(papaya.isCollidingIntoRightOf)
+    assert.isFunction(papaya.isCollidingIntoRightOf);
   });
 
   it('should have a prototype method called isCollidingIntoBottomOf', function(){
     var papaya = new Papaya(500, 300);
-    assert.isFunction(papaya.isCollidingIntoBottomOf)
+    assert.isFunction(papaya.isCollidingIntoBottomOf);
   });
 
   it('should have a prototype method called isCollidingIntoLeftOf', function(){
     var papaya = new Papaya(500, 300);
-    assert.isFunction(papaya.isCollidingIntoBottomOf)
+    assert.isFunction(papaya.isCollidingIntoBottomOf);
   });
 
   it('should have a prototype method called entersVoid', function(){
     var papaya = new Papaya(500, 300);
-    assert.isFunction(papaya.entersVoid)
+    assert.isFunction(papaya.entersVoid);
   });
-
 });

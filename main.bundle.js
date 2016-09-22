@@ -122,7 +122,6 @@
 	  if (difficultyLevel > 1) {
 	    jungle.increasePapayaSpeed();
 	    jungle.increasePaddleSpeed();
-	    appendGameWinBonus();
 	  }
 	}
 
@@ -189,9 +188,6 @@
 	}
 
 	function drawPapaya(ctx) {
-	  // ctx.fillStyle = '#FF8243';
-	  // ctx.fillRect(jungle.papaya.x, jungle.papaya.y, jungle.papaya.width, jungle.papaya.height);
-	  // _______
 	  var papayaImage = new Image();
 	  papayaImage.src = __webpack_require__(6);
 	  ctx.drawImage(papayaImage, jungle.papaya.x, jungle.papaya.y, jungle.papaya.height, jungle.papaya.width);
@@ -256,11 +252,6 @@
 	  ctx.font = '30px Bungee Inline, sans-serif';
 	  ctx.fillStyle = 'white';
 	  ctx.fillText('You Deserve Some Papaya Whip.', 80, 210);
-	  //somehow add picture and linke to papaya whip
-	  // var img = new Image();
-	  // img.src= '../images/papaya-whipped-cream-2.jpg';
-	  // ctx.drawImage(img,20,20);
-	  // ______________________
 	  ctx.font = '30px Oswald, sans-serif';
 	  ctx.fillStyle = 'grey';
 	  ctx.fillText('Hit SpaceBar to Play Again...', 200, 280);
@@ -10381,6 +10372,11 @@
 	  }
 	};
 
+	Jungle.prototype.gameOver = function () {
+	  alert('Weak Whippin!!!');
+	  document.location.reload();
+	};
+
 	Jungle.prototype.detectBlocks = function () {
 	  var papaya = this.papaya;
 	  this.blockSetup.forEach(function (block) {
@@ -10426,17 +10422,6 @@
 	    this.formRows(blockY += 40);
 	  }
 	};
-
-	// Jungle.prototype.detectPaddle = function(paddle) {
-	//   var papaya = this.papaya;
-	//   if(papaya.isCollidingIntoTopOf(paddle)) {
-	//         papaya.speedY = -papaya.speedY;
-	//   } else if (papaya.isCollidingIntoRightOf(paddle)) {
-	//     papaya.speedX = -papaya.speedX;
-	//   } else if (papaya.isCollidingIntoLeftOf(paddle)) {
-	//     papaya.speedX = -papaya.speedX;
-	//       }
-	// };
 
 	Jungle.prototype.detectPaddle = function (paddle) {
 	  var papaya = this.papaya;
@@ -10497,26 +10482,6 @@
 
 	module.exports = Jungle;
 
-	// if (papaya.x > paddle.x + 40 && papaya.x + papaya.width < paddle.x + 60) {
-	//   papaya.speedY = -papaya.speedY;
-	// }
-	// if (papaya.x + papaya.width > paddle.x + 20 &&
-	// papaya.x + papaya.width < paddle.x + 40) {
-	//   papaya.left60();
-	// }
-	// if (papaya.x + papaya.width > paddle.x &&
-	// papaya.x + papaya.width < paddle.x + 20) {
-	//   papaya.left45();
-	// }
-	// if (papaya.x > paddle.x + 60 &&
-	// papaya.x + papaya.width < paddle.x + 80) {
-	//   papaya.right60();
-	// }
-	// if (papaya.x > paddle.x + 80 &&
-	//   papaya.x + papaya.width < paddle.x + paddle.width) {
-	//     papaya.right45();
-	// }
-
 /***/ },
 /* 3 */
 /***/ function(module, exports) {
@@ -10542,11 +10507,9 @@
 /* 4 */
 /***/ function(module, exports) {
 
-	// var papayaRightSide =
-
 	function Papaya(jungleWidth, jungleHeight) {
-	  this.width = 10;
-	  this.height = 10;
+	  this.width = 15;
+	  this.height = 15;
 	  this.x = (jungleWidth - this.width) / 2;
 	  this.y = jungleHeight - 4 * this.height;
 	  this.speedX = 4;
@@ -10555,47 +10518,19 @@
 	}
 
 	Papaya.prototype.isCollidingIntoTopOf = function (dingus) {
-	  //-right-pap(X) > -left-dingus(X)
-	  return this.x + this.width > dingus.x &&
-	  //-left-pap(X) < -right-dingus(X)
-	  this.x < dingus.x + dingus.width &&
-	  //bottom--pap(Y) > top--dingus(Y)
-	  this.height + this.y > dingus.y &&
-	  //top-pap < top-dingus
-	  this.y < dingus.y;
+	  return this.x + this.width > dingus.x && this.x < dingus.x + dingus.width && this.height + this.y > dingus.y && this.y < dingus.y;
 	};
 
 	Papaya.prototype.isCollidingIntoRightOf = function (dingus) {
-	  //-left-pap(X) < -right-dingus(X)
-	  return this.x < dingus.x + dingus.width &&
-	  //right-papaya(X) > right-dingus(X)
-	  this.x + this.width > dingus.x + dingus.width &&
-	  //top--pap(Y) < bottom--dingus(Y)
-	  this.y < dingus.y + dingus.height &&
-	  //bottom-pap(Y) > top-dingus(Y)
-	  this.y + this.height > dingus.y;
+	  return this.x < dingus.x + dingus.width && this.x + this.width > dingus.x + dingus.width && this.y < dingus.y + dingus.height && this.y + this.height > dingus.y;
 	};
 
 	Papaya.prototype.isCollidingIntoBottomOf = function (dingus) {
-	  //-right-pap(X) > -left-dingus(X)
-	  return this.x + this.width > dingus.x &&
-	  //-left-pap(X) < -right-dingus(X)
-	  this.x < dingus.x + dingus.width &&
-	  //top--pap(Y) < bottom--dingus(Y)
-	  this.y < dingus.y + dingus.height &&
-	  //bottom-pap(Y) > bottom--dingus(Y)
-	  this.y + this.height > dingus.y + dingus.height;
+	  return this.x + this.width > dingus.x && this.x < dingus.x + dingus.width && this.y < dingus.y + dingus.height && this.y + this.height > dingus.y + dingus.height;
 	};
 
 	Papaya.prototype.isCollidingIntoLeftOf = function (dingus) {
-	  //-right-pap(X) > -left-dingus(X)
-	  return this.x + this.width > dingus.x &&
-	  //left-papaya(X) < left-dingus(X)
-	  this.x < dingus.x &&
-	  //top--pap(Y) > bottom--dingus(Y)
-	  this.y < dingus.y + dingus.height &&
-	  //bottom-pap(Y) > top-dingus(Y)
-	  this.y + this.height > dingus.y;
+	  return this.x + this.width > dingus.x && this.x < dingus.x && this.y < dingus.y + dingus.height && this.y + this.height > dingus.y;
 	};
 
 	Papaya.prototype.entersVoid = function () {
@@ -10614,11 +10549,6 @@
 	  this.speedX = this.speedX * 1.1;
 	};
 
-	// var img = new Image()
-	// img.src = 'something';
-	// drawImage(img, x y w h)
-
-
 	module.exports = Papaya;
 
 /***/ },
@@ -10633,21 +10563,13 @@
 	  this.status = true;
 	}
 
-	//
-	// Block.prototype.detectBlockCollision = function(block) {
-	//   if(this.papaya.x > block.x && this.papaya.x < block.x + block.width) {
-	//     this.papaya.speedY = -this.papaya.speedY;
-	//   }
-	// };
-
-
 	module.exports = Block;
 
 /***/ },
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e8400eaa811235235ccc88584f5c6056.png";
+	module.exports = __webpack_require__.p + "8a909cc17e8b7cfeda795d433fe14a43.png";
 
 /***/ }
 /******/ ]);
