@@ -1,40 +1,48 @@
-.container {
-  background: url("images/papaya-leaves.jpg");
-  background-size: contain;
-  /*align-items: center;*/
+body {
+  background: url("../images/papaya-leaves.jpg");
+  background-size: cover;
+}
+
+h1, h2 {
+  margin: 0;
 }
 
 h1 {
-  font: 60px 'Bungee Inline', cursive;
-  /*margin: 30px auto;*/
+  font-family: 'Bungee Inline', cursive;
+  font-size: 60px;
+  font-weight: 400;
 }
 
-.heading-box{
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.heading-box {
   width: 850px;
-  display: flex;
-  justify-content: center ;
+  margin: 72px auto 30px auto;
+  padding: 30px;
+  text-align: center;
   background: blanchedalmond;
-  margin: 60px auto;
-  outline: 6px dashed blanchedalmond;
+  outline: 12px dashed blanchedalmond;
   box-shadow: 0 0 0 6px #EA3556;
   animation: 1s animateBorder infinite;
 }
 
 #jungle-canvas {
   display: flex;
-  -ms-align-items: center;
   align-items: center;
-  margin: auto;
+  -ms-align-items: center;
+  margin: 60px auto 90px auto;
   background: papayawhip;
-  outline: 12px solid grey;
-  /*border: #0095DD;*/
+  outline: 12px solid greenyellow;
 }
-
 
 @keyframes animateBorder {
   to {
     outline-color: #EA3556;
-    box-shadow: 0 0 0 6px greenyellow;
+    box-shadow: 0 0 0 12px greenyellow;
   }
 
 }
