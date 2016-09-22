@@ -10,7 +10,6 @@ h1, h2 {
 h1 {
   font-family: 'Bungee Inline', cursive;
   font-size: 60px;
-  font-weight: 400;
 }
 
 h2 {
@@ -29,15 +28,6 @@ h2 {
   animation: 1s animateBorder infinite;
 }
 
-/*#gameplay-container {
-  display: flex;
-  align-items: center;
-  -ms-align-items: center;
-  margin: 60px auto 90px auto;
-  background: papayawhip;
-  outline: 12px solid greenyellow;
-}*/
-
 #jungle-canvas {
   display: flex;
   align-items: center;
@@ -47,10 +37,6 @@ h2 {
   outline: 12px solid greenyellow;
 }
 
-/*#game-console {
-  width: 200px;
-  height: 500px;
-}*/
 
 @keyframes animateBorder {
   to {
@@ -58,6 +44,26 @@ h2 {
     box-shadow: 0 0 0 12px greenyellow;
   }
 }
+
+.papaya-counter {
+  bottom: 50px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+
+.spare-papayas {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 30px;
+  color: black;
+}
+
+.papaya-count {
+  font-family: 'Bungee Inline', cursive;
+  color: #EA3556;
+  font-size: 40px;
+}
+
 
 /*font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
