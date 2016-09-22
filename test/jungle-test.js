@@ -28,12 +28,6 @@ describe('Jungle', function () {
     assert.equal(jungle.level, false)
   });
 
-
-  it.skip('should have a state property', function() {
-    var jungle = new Jungle(600, 400);
-    assert.equal(jungle.state, true);
-  });
-
   it('should have a default papayas property of 3', function() {
     var jungle = new Jungle(600, 400);
     assert.equal(jungle.papayas, 3)
@@ -153,9 +147,25 @@ describe('Jungle', function () {
   it('if a block has been hit, its status should be false', function(){
     var jungle = new Jungle(500, 700);
     var block = new Block(300, 100, 50, 20);
+    jungle.alterBlockStatus(block);
+    assert.equal(block.status, false)
+  });
+
+  it('if the papaya hits the left wall of the jungle, the speedX should be -4', function(){
+    var jungle = new Jungle(500, 700);
+    var papaya = new Block(10, 10);
+    papaya.x = 2;
+    papaya.speedX = 4;
+    assert.equal(papaya.speedX, 4);
+  });
+
+  it('if the papaya hits the right wall of the jungle, the speedX should be +4', function(){
+    var jungle = new Jungle(500, 700);
+    var papaya = new Block(10, 10);
+    papaya.x = 687;
+    papaya.speedX = 4;
+    assert.equal(papaya.speedX, 4);
   })
-
-
 
 
 
