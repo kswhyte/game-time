@@ -19,7 +19,7 @@ h2 {
 
 .heading-box {
   width: 850px;
-  margin: 72px auto 30px auto;
+  margin: 60px auto 30px auto;
   padding: 30px;
   text-align: center;
   background: blanchedalmond;
@@ -27,16 +27,6 @@ h2 {
   box-shadow: 0 0 0 6px #EA3556;
   animation: 1s animateBorder infinite;
 }
-
-#jungle-canvas {
-  display: flex;
-  align-items: center;
-  -ms-align-items: center;
-  margin: 60px auto 90px auto;
-  background: papayawhip;
-  outline: 12px solid greenyellow;
-}
-
 
 @keyframes animateBorder {
   to {
@@ -46,7 +36,6 @@ h2 {
 }
 
 .papaya-counter {
-  bottom: 50px;
   margin: auto;
   position: relative;
   text-align: center;
@@ -54,7 +43,7 @@ h2 {
 
 .spare-papayas {
   font-family: 'Bungee Inline', cursive;
-  font-size: 30px;
+  font-size: 20px;
   color: black;
 }
 
@@ -65,10 +54,25 @@ h2 {
   font-size: 40px;
 }
 
+#jungle-canvas {
+  display: flex;
+  align-items: center;
+  -ms-align-items: center;
+  margin: 20px auto 60px auto;
+  background: papayawhip;
+  outline: 12px solid greenyellow;
+}
 
-/*font-family: 'Open Sans', sans-serif;
-font-family: 'Roboto', sans-serif;
-font-family: 'Lato', sans-serif;
-font-family: 'Bungee Shade', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'Bungee Inline', cursive;*/
+.bonus {
+  bottom: 20px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 30px;
+}
+
+.bonus a {
+  color: #EA3556;
+  text-decoration: none;
+}
