@@ -2,7 +2,7 @@
 
 Turing School 1608 Front End Program - Module 1 Final Project (Game Time) - Created by Kinan Whyte and Nick Chambers
 
-Play Papaya Whipper here -
+Play Papaya Whipper here - [Live Game](https://kswhyte.github.io/game-time/)
 
 ##Intro
 Papaya Whipper is a new take on the classic Breakout arcade game. Its name carries on the legacy of building games as tributes to the finest Hex code colors, which began with Casey Metz and Jeff Duke's timeless classic, "Blanched Almonoid". To pay back our debt to these visionaries, there are hints of Blanched Almond throughout the games' styling.
