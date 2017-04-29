@@ -1,10 +1,10 @@
 # Papaya Whipper!!!
 
+## Play Papaya Whipper here - [Live Game](https://kswhyte.github.io/game-time/)
+
 Turing School 1608 Front End Program - Module 1 Final Project (Game Time) - Created by Kinan Whyte and Nick Chambers
 
 <img width="1279" alt="screen shot 2017-04-28 at 5 49 44 pm" src="https://cloud.githubusercontent.com/assets/13802107/25550953/663f3340-2c3b-11e7-86f6-6735564c1399.png">
-
-Play Papaya Whipper here - [Live Game](https://kswhyte.github.io/game-time/)
 
 ## Intro
 
@@ -32,6 +32,6 @@ Most of the collision detection for our game resides in the "Jungle" object, wit
 
 We had a splendid time figuring out how to build this game and working through the many puzzles it presented us. We hope future modules will continue on with paying tributes to the great CSS colors of the web.
 
-###Happy whipping -
+### Happy whipping -
 
 Nick and Kinan
