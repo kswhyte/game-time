@@ -1,6 +1,6 @@
 # Papaya Whipper!!!
 
-## Play Papaya Whipper here - [Live Game](https://kswhyte.github.io/game-time/)
+### Play Papaya Whipper here - [Live Game](https://kswhyte.github.io/game-time/)
 
 Turing School 1608 Front End Program - Module 1 Final Project (Game Time) - Created by Kinan Whyte and Nick Chambers
 
