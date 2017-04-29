@@ -24,11 +24,17 @@ If the user succeeds in breaking all of the blocks, a new level is generated wit
 
 <img width="1278" alt="screen shot 2017-04-28 at 5 51 16 pm" src="https://cloud.githubusercontent.com/assets/13802107/25550955/6bbed3de-2c3b-11e7-889e-1cf182944025.png">
 
-## How Its Built
+## How It's Built
 
 Much of the logic for the game required us to recall our seventh grade math lessons and utilize simple algebra and geometry. The crux of the game development was writing out collision detection for each of our Javascript game objects and engineering the behavior to appear as fun and realistic as possible.
 
 Most of the collision detection for our game resides in the "Jungle" object, with some communication for collisions coming from our "Papaya". The game's bricks are created from an array of brick objects, which are altered to "false" upon papaya collision.
+
+---
+
+[Original Assignment](http://frontend.turing.io/projects/game-time.html)
+
+---
 
 ## Summary
 
